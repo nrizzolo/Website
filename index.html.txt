@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nick Rizzolo | On-Demand Biotech Sales Partner</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero .description {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #ff5252;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+        }
+
+        /* Main Content */
+        .main-content {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #333;
+            text-align: center;
+        }
+
+        .section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #667eea;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8f0ff 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Target Audience */
+        .target-audience {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+            padding: 60px 0;
+            border-radius: 20px;
+            margin: 40px 0;
+        }
+
+        .target-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .target-item {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Why Work With Me */
+        .why-section {
+            background: linear-gradient(135deg, #81ecec 0%, #74b9ff 100%);
+            padding: 60px 0;
+            border-radius: 20px;
+            color: white;
+            margin: 40px 0;
+        }
+
+        .why-section h2 {
+            color: white;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            margin: 1rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Process Steps */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
+            border-radius: 15px;
+            color: white;
+            position: relative;
+        }
+
+        .step-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .step h4 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* Pricing Table */
+        .pricing-table {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .pricing-card.featured {
+            border: 3px solid #667eea;
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured::before {
+            content: "POPULAR";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #667eea;
+            color: white;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .plan-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .plan-price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .plan-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .plan-features li:before {
+            content: "✓";
+            color: #4CAF50;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-button {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .contact-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .stats {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">🔬 Nick Rizzolo</div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>On-Demand Biotech Sales Partner</h1>
+            <div class="subtitle">Scientific Sales Execution — Without the Full-Time Headcount</div>
+            <div class="description">
+                You've built a great product. Now you need someone who can sell it. I help early-stage biotech and life science companies grow revenue by handling everything from cold outreach and CRM setup to in-person meetings and demo bookings — all without the cost and delay of hiring a full-time rep or agency.
+            </div>
+            <a href="#contact" class="cta-button">📅 Book an Intro Call</a>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <div class="container">
+            <section id="services" class="section">
+                <h2>✅ What I Deliver</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="icon">📞</div>
+                        <h4>Booked Demos</h4>
+                        <p>Direct meetings with academic labs, CROs, and biotech companies who need your solution</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon">📋</div>
+                        <h4>Lead List Building</h4>
+                        <p>Targeted prospect research using Apollo, Clay, and custom targeting strategies</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon">💬</div>
+                        <h4>Cold Outreach</h4>
+                        <p>Email and LinkedIn campaigns that actually get replies and move conversations forward</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon">🔁</div>
+                        <h4>CRM & Reporting</h4>
+                        <p>Weekly tracking and reporting with full HubSpot setup and management</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon">🧪</div>
+                        <h4>Real-time Feedback</h4>
+                        <p>Live insights on buyer objections, interests, and market needs</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon">🚶‍♂️</div>
+                        <h4>In-Person Visits</h4>
+                        <p>Boston-area lab visits and face-to-face meetings — I'm not just digital</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="target-audience">
+                <div class="container">
+                    <h2>🎯 Who I Work With</h2>
+                    <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem;">You're a good fit if you're a:</p>
+                    <div class="target-list">
+                        <div class="target-item">Reagent, diagnostics, or lab tool startup</div>
+                        <div class="target-item">CRO or CDMO under 25 employees</div>
+                        <div class="target-item">AI-biology or computational biotech company</div>
+                        <div class="target-item">Pre-seed to Series A, growing fast but missing sales bandwidth</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="why-section">
+                <div class="container">
+                    <h2>💼 Why Work With Me?</h2>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-number">$300K+</span>
+                            <span class="stat-label">In B2B Sales Closed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Biotech Focused</span>
+                        </div>
+                    </div>
+                    <p style="font-size: 1.1rem; text-align: center; max-width: 800px; margin: 0 auto;">
+                        I've closed deals from molecular biology reagents and PCR kits to complex technical solutions by building trust, asking the right questions, and following through. I've worked with everyone from C-suite executives and PhDs to research assistants and lab techs. You don't need a huge sales team to get traction — you need someone who can own the sales process and close.
+                    </p>
+                </div>
+            </section>
+
+            <section id="process" class="section">
+                <h2>🚀 How It Works</h2>
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h4>Strategy Call</h4>
+                        <p>We define your ideal customer, outreach channels, and goals</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h4>Launch Campaigns</h4>
+                        <p>I build the lead list, write the copy, and begin multi-channel outreach</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h4>Book Demos & Collect Feedback</h4>
+                        <p>You get live meetings, real objections, and clear reporting</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h4>Scale or Hand Off</h4>
+                        <p>Keep me on retainer or use the system to train your first sales hire</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="pricing" class="section">
+                <h2>💸 Packages & Pricing</h2>
+                <div class="pricing-table">
+                    <div class="pricing-card">
+                        <div class="plan-name">Pilot</div>
+                        <div class="plan-price">$750</div>
+                        <ul class="plan-features">
+                            <li>2-week trial</li>
+                            <li>15 qualified leads</li>
+                            <li>Email copy & templates</li>
+                            <li>CRM setup</li>
+                            <li>Performance report</li>
+                        </ul>
+                        <a href="#contact" class="cta-button">Get Started</a>
+                    </div>
+                    <div class="pricing-card featured">
+                        <div class="plan-name">Starter</div>
+                        <div class="plan-price">$1,500<span style="font-size: 1rem;">/mo</span></div>
+                        <ul class="plan-features">
+                            <li>20-30 leads per month</li>
+                            <li>Full outreach campaigns</li>
+                            <li>Weekly tracking & reports</li>
+                            <li>CRM management</li>
+                            <li>Email & LinkedIn outreach</li>
+                        </ul>
+                        <a href="#contact" class="cta-button">Get Started</a>
+                    </div>
+                    <div class="pricing-card">
+                        <div class="plan-name">Growth</div>
+                        <div class="plan-price">$3,000<span style="font-size: 1rem;">/mo</span></div>
+                        <ul class="plan-features">
+                            <li>50+ leads per month</li>
+                            <li>Multi-channel campaigns</li>
+                            <li>Weekly review calls</li>
+                            <li>Advanced targeting</li>
+                            <li>Priority support</li>
+                        </ul>
+                        <a href="#contact" class="cta-button">Get Started</a>
+                    </div>
+                    <div class="pricing-card">
+                        <div class="plan-name">Boston+</div>
+                        <div class="plan-price">$3,500+<span style="font-size: 1rem;">/mo</span></div>
+                        <ul class="plan-features">
+                            <li>Everything in Growth</li>
+                            <li>In-person lab visits</li>
+                            <li>Hand-delivered materials</li>
+                            <li>Local Boston coverage</li>
+                            <li>Face-to-face meetings</li>
+                        </ul>
+                        <a href="#contact" class="cta-button">Get Started</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>👋 Let's Talk</h2>
+            <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+                If you're ready to start building a real pipeline — not just hoping inbound traffic shows up — I'd love to connect.
+            </p>
+            <div class="contact-buttons">
+                <a href="#" class="contact-button">📅 Book an Intro Call</a>
+                <a href="#" class="contact-button">📄 Download Services Overview</a>
+                <a href="mailto:nick@yourdomain.com" class="contact-button">✉️ Email Me</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.service-card, .step, .pricing-card');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('fade-in-up');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Run once on load
+    </script>
+</body>
+</html>
